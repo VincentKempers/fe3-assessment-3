@@ -37,13 +37,44 @@ So i created this datavisualisation that shows how many tweets i have on the scr
 
 *	Then I used parts of the code from [scatterplot](https://bl.ocks.org/mbostock/3887118) by [Mike Bostock](https://github.com/mbostock). To rework it a little bit for the barchart.
 
-*	I started out to clean the data a bit more after I knew what I wanted to do, so that it is readable.To Achieve that i made a function to map all my data and nested the data for the barchart. 
+*	I started out to clean the data a bit more after I knew what I wanted to do, so that it is readable.To Achieve that i made a function to map all my data and nested the data for the barchart. [`d3.nest()`](https://github.com/d3/d3-collection/blob/master/README.md#nests)
 
-*	Then i made the data fit i used the data from 2011 - 2017 to delete the data that i didn't need. I already refactored the v3 to v4 and made variables dynamic so i could just paste it and fix the little parts.
+*	Then I made the data fit i used the data from 2011 - 2017 to delete the data that I didn't need. I already refactored the v3 to v4 and made variables dynamic so i could just paste it and fix the little parts. I used the `substring()` function to achieve this. Put the header (data on top you want to remove) and the footer(data below you want to remove) and it will keep the data in between these variables.
 
-*	 i created a `update()` function for every click on the bar you want to look into and you see the circles will appear. Then i created in d3 a listener on the scatterplot so you can click on every dot to see what tweet hides behind it.
+*	 I created a `update()` function for every click on the bar you want to look into and you see the circles will appear. Then i created in d3 a listener on the scatterplot so you can click on every dot to see what tweet hides behind it. I made this completely with d3. You click on the bar and draw the scatterplot.
 
-* I had to rework my code and data multiple times to make this work as I wanted. This way had a few hiccups in his road. As an example I had to make two maps to make the scatterplot work. This could probably be resolved by making it more focused on the bar chart. 
+```js
+  function update(data) {
+    var fixedData = data.values;
+
+    var selection = dotted.selectAll('.dot')
+        .data(fixedData);
+
+    selection.enter()
+      .append('circle')
+        .attr('class', 'dot')
+        .attr('r', 5)
+        .attr('cx', function(d) { 
+         return xScatter(d.usedate); 
+        })
+        .attr('cy', function(d) { 
+          return yScatter(d.characters); 
+      })
+        .style('fill', function(d) { 
+          return color(d.characters); 
+        })
+        .on('click', function (d) {
+          return d3.select('.showTweet')
+          .select('a')
+          .attr('href', 'https://twitter.com/_Vintelligent/status/'+ d.tweetId)
+          .text(d.content);
+          update();
+        });
+```
+
+When you click on a other year it will delete the amount what he doesn't need and update the content. So you wouldn't have to redraw every circle (which saves alot of time).
+
+* I had to rework my code and data multiple times to make this work as I wanted. This way had a few hiccups in this road. As an example I had to make two maps to make the scatterplot work. This could probably be resolved by making it more focused on the bar chart. I have two mapped functions because the data.
 
 *	After that mostly styled my charts in Javascript (especially the scatterplot, i used the [`d3.schemeCategory20`](https://github.com/d3/d3-scale/blob/master/README.md#schemeCategory20)). And the background and well everything else in CSS
 
