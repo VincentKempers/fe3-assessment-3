@@ -1,37 +1,72 @@
-# ![Assessment 3][banner]
+# Assessment 3
 
-This repository can be forked for [**assessment 3**][a2] of [frontend 3][fe3]
-at [**@CMDA**][cmda].
+This is a assessment i needed to acquire data. And i thought it was a great idea to do my twitter data to make my last assessment more of a visualisation than cold numbers. i used the work of Mike bostock for the two charts i used. The barchart and the scatterplot.
 
-## TODO
+## Background
 
-*   [ ] [GitHub Pages](#github-pages)
-*   [ ] [Metadata](#metadata)
-*   [ ] [Issues](#issues)
-*   [ ] Replace this document in your fork with your own readme!
+This assessment is to work on the interaction of a chart. The data must interact on the other chart in the data visualisation. I used data from my own twitter wich everybody can download in the settings of your twitter profile.
 
-## GitHub Pages
+`settings > archive > download your archive`
 
-Set up [GitHub Pages][pages] for this fork through the **Settings** pane.  Use
-the **Master branch** as its source.  Do not choose a Jekyll template.
+#### sample of my data layout
 
-## Metadata
+```csv
+"tweet_id","in_reply_to_status_id","in_reply_to_user_id","timestamp","source","text","retweeted_status_id","retweeted_status_user_id","retweeted_status_timestamp","expanded_urls"
+"918239532981669888","","","2017-10-11 22:18:59 +0000","<a href=""http://twitter.com/download/iphone"" rel=""nofollow"">Twitter for iPhone</a>","RT @JavaScriptKicks: The Complete HTML Cheat Sheet by codeburstio https://t.co/VLoqAPpTIZ #javascript #html via JavaScriptKicks","918238577066217472","2638950678","2017-10-11 22:15:11 +0000","https://javascriptkicks.com/r/189160?url=https://codeburst.io/the-complete-html-cheat-sheet-751fdae2480c?gi=65abb05eb51a,https://javascriptkicks.com/r/189160?url=https://codeburst.io/the-complete-html-cheat-sheet-751fdae2480c?gi=65abb05eb51a"
+"916291183885905920","","","2017-10-06 13:16:56 +0000","<a href=""http://twitter.com/download/iphone"" rel=""nofollow"">Twitter for iPhone</a>","RT @SwiftOnSecurity: I installed Kaspersky on my computer and it detected the malware I was writing for the US government! https://t.co/Ye4…","916113919076388864","2436389418","2017-10-06 01:32:33 +0000","https://twitter.com/SwiftOnSecurity/status/916113919076388864/photo/1"
+"915765817140269056","","","2017-10-05 02:29:19 +0000","<a href=""http://twitter.com/download/iphone"" rel=""nofollow"">Twitter for iPhone</a>","RT @wesbos: 🔥 Async functions can chain a .catch() to catch any errors without a try/catch https://t.co/O3ffEqvHc6","915610241907208192","815246","2017-10-04 16:11:07 +0000","https://twitter.com/wesbos/status/915610241907208192/photo/1,https://twitter.com/wesbos/status/915610241907208192/photo/1"
+"915765732058779649","","","2017-10-05 02:28:59 +0000","<a href=""http://twitter.com/download/iphone"" rel=""nofollow"">Twitter for iPhone</a>","RT @iamdevloper: &gt; I'm too nervous to quit my job, what if freelancing doesn't work out?
+*6 months into contracting*
+&gt; imma be a few minute…","915510126991331328","564919357","2017-10-04 09:33:18 +0000","https://twitter.com/iamdevloper/status/915510126991331328/photo/1"
+"915456640509513728","","","2017-10-04 06:00:46 +0000","<a href=""http://twitter.com/download/iphone"" rel=""nofollow"">Twitter for iPhone</a>","Today’s vibe:  https://t.co/clfvTtJVg3","","","","https://open.spotify.com/track/1vOZUvVZRrveuom1RLhBF0?si=aHpZfCdD"
+```
 
-Edit the **description** and **url** of your repository.  Click on edit above
-the green Clone or download button and fill in a correct description and use the
-`github.io` URL you just set up.
+### What did i do?
 
-## Issues
+I wanted to do alot with this data but it was a hardship to get the visualisation what i originally wanted (sometimes, i'm a overachiever). 
+So i created this datavisualisation that shows how many tweets i have on the screen and you can interact with that tweet, and even go to the original tweet. 
 
-Enable issues so we can give feedback by going to the settings tab of your fork
-and checking the box next to `issues`.
+![result of this code](preview.png)
 
-[banner]: https://cdn.rawgit.com/cmda-fe3/logo/a4b0614/banner-assessment-3.svg
 
-[a2]: https://github.com/cmda-fe3/course-17-18/tree/master/assessment-3#description
+*	I started out working on my data to clean it and work this mess of a dataset. So i first rendered it as a text file and deleted what i didn't need and worked my way up from there [`d3.csvParseRows()`](https://github.com/d3/d3-dsv/blob/master/README.md#csvParseRows).
 
-[fe3]: https://github.com/cmda-fe3
+*	I used parts of the code from [barchart](https://bl.ocks.org/mbostock/3887118) by [Mike Bostock](https://github.com/mbostock). To rework it a little bit for the barchart.
 
-[cmda]: https://github.com/cmda
+*	Then I used parts of the code from [scatterplot](https://bl.ocks.org/mbostock/3885304) by [Mike Bostock](https://github.com/mbostock). To rework it a little bit for the barchart.
 
-[pages]: https://pages.github.com
+*	I started out to clean the data a bit more after I knew what I wanted to do, so that it is readable.To Achieve that i made a function to map all my data and nested the data for the barchart. 
+
+*	Then i made the data fit i used the data from 2011 - 2017 to delete the data that i didn't need. I already refactored the v3 to v4 and made variables dynamic so i could just paste it and fix the little parts.
+
+*	 i created a `update()` function for every click on the bar you want to look into and you see the circles will appear. Then i created in d3 a listener on the scatterplot so you can click on every dot to see what tweet hides behind it.
+
+* I had to rework my code and data multiple times to make this work as I wanted. This way had a few hiccups in his road. As an example I had to make two maps to make the scatterplot work. This could probably be resolved by making it more focused on the bar chart. 
+
+*	After that mostly styled my charts in Javascript (especially the scatterplot, i used the [`d3.schemeCategory20`](https://github.com/d3/d3-scale/blob/master/README.md#schemeCategory20)). And the background and well everything else in CSS
+
+### Features
+
+[**d3 API**](https://github.com/d3/d3/blob/master/API.md)
+-   [`d3.axisBottom() and d3.axisLeft()`](https://github.com/d3/d3-axis/blob/master/README.md)
+-   [`d3.scaleOrdinal()`](https://github.com/d3/d3-3.x-api-reference/blob/master/Ordinal-Scales.md#ordinal)
+-   [`d3.extent()`](https://github.com/d3/d3-array/blob/master/README.md#extent)
+-   [`d3.scaleLinear()`](https://github.com/d3/d3-scale/blob/master/README.md#scaleLinear)
+-   [`d3.enter()`](https://github.com/d3/d3-selection/blob/master/README.md#selection_enter)
+-   [`d3.csvParseRows()`](https://github.com/d3/d3-dsv/blob/master/README.md#csvParseRows)
+-   [`d3.text()`](https://github.com/d3/d3-request/blob/master/README.md#text)
+-   [`d3.exit()`](https://github.com/d3/d3-selection/blob/master/README.md#selection_exit)
+-		[`d3.nest()`](https://github.com/d3/d3-collection/blob/master/README.md#nests)
+-		[`d3.remove()`](https://github.com/d3/d3-transition/blob/master/README.md#transition_remove)
+-		[`d3.timeparse()`](https://github.com/d3/d3-time-format/blob/master/README.md#timeParse)
+-		[`d3.schemeCategory20`](https://github.com/d3/d3-scale/blob/master/README.md#schemeCategory20)
+
+### License
+
+Check the work of: 
+* [Mike Bostock](https://github.com/mbostock)
+
+For the animation bit of my code i used the sort [barchart](https://bl.ocks.org/mbostock/3885705) by [Mike Bostock](https://github.com/mbostock) [GPLv3](https://opensource.org/licenses/GPL-3.0).
+
+
+[GPLv3](https://choosealicense.com/licenses/gpl-3.0/) Vincent Kempers 👨🏽‍💻

@@ -1,0 +1,38 @@
+body {
+	display: flex;
+	flex-direction: column;
+	font-family: Oxygen, sans-serig;
+	background-color:black;
+}
+
+h1 {
+	color:white;
+}
+
+p {
+	color:white;
+}
+
+svg {
+	display:block;
+	margin: 0 auto;
+}
+
+div {
+	display: block;
+	margin: 0 auto;
+}
+
+div > p,a,h2  {
+	width:20em;
+	color:white;
+}
+
+#bars {
+	display:flex;
+	flex-direction: row;
+}
+
+.axis--y, .axis--x, path, line{
+	stroke: white;
+}
