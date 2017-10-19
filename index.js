@@ -180,7 +180,6 @@ g1.append('g')
 // de barchart want we willen de totale tweets tegenover de characters.
     var fixedData = data.values;
 
-    console.log(fixedData);
 // ik slecteer alvast de dots en vult die met de data
     var selection = dotted.selectAll('.dot')
         .data(fixedData);
