@@ -48,18 +48,18 @@ So i created this datavisualisation that shows how many tweets i have on the scr
 ### Features
 
 [**d3 API**](https://github.com/d3/d3/blob/master/API.md)
--   [`d3.axisBottom() and d3.axisLeft()`](https://github.com/d3/d3-axis/blob/master/README.md)
--   [`d3.scaleOrdinal()`](https://github.com/d3/d3-3.x-api-reference/blob/master/Ordinal-Scales.md#ordinal)
--   [`d3.extent()`](https://github.com/d3/d3-array/blob/master/README.md#extent)
--   [`d3.scaleLinear()`](https://github.com/d3/d3-scale/blob/master/README.md#scaleLinear)
--   [`d3.enter()`](https://github.com/d3/d3-selection/blob/master/README.md#selection_enter)
--   [`d3.csvParseRows()`](https://github.com/d3/d3-dsv/blob/master/README.md#csvParseRows)
--   [`d3.text()`](https://github.com/d3/d3-request/blob/master/README.md#text)
--   [`d3.exit()`](https://github.com/d3/d3-selection/blob/master/README.md#selection_exit)
--		[`d3.nest()`](https://github.com/d3/d3-collection/blob/master/README.md#nests)
--		[`d3.remove()`](https://github.com/d3/d3-transition/blob/master/README.md#transition_remove)
--		[`d3.timeparse()`](https://github.com/d3/d3-time-format/blob/master/README.md#timeParse)
--		[`d3.schemeCategory20`](https://github.com/d3/d3-scale/blob/master/README.md#schemeCategory20)
+*   [`d3.axisBottom() and d3.axisLeft()`](https://github.com/d3/d3-axis/blob/master/README.md)
+*   [`d3.scaleOrdinal()`](https://github.com/d3/d3-3.x-api-reference/blob/master/Ordinal-Scales.md#ordinal)
+*   [`d3.extent()`](https://github.com/d3/d3-array/blob/master/README.md#extent)
+*   [`d3.scaleLinear()`](https://github.com/d3/d3-scale/blob/master/README.md#scaleLinear)
+*   [`d3.enter()`](https://github.com/d3/d3-selection/blob/master/README.md#selection_enter)
+*   [`d3.csvParseRows()`](https://github.com/d3/d3-dsv/blob/master/README.md#csvParseRows)
+*   [`d3.text()`](https://github.com/d3/d3-request/blob/master/README.md#text)
+*   [`d3.exit()`](https://github.com/d3/d3-selection/blob/master/README.md#selection_exit)
+*		[`d3.nest()`](https://github.com/d3/d3-collection/blob/master/README.md#nests)
+*		[`d3.remove()`](https://github.com/d3/d3-transition/blob/master/README.md#transition_remove)
+*		[`d3.timeparse()`](https://github.com/d3/d3-time-format/blob/master/README.md#timeParse)
+*		[`d3.schemeCategory20`](https://github.com/d3/d3-scale/blob/master/README.md#schemeCategory20)
 
 ### License
 
