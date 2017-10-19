@@ -33,10 +33,10 @@ var dotted = d3.select('.scatter')
 // begin variabelen voor de barchart
 // ik gebruik hier svg1 en vel aanduiding met 1. De reden hier voor is dat ik mijzelf niet wou verwarren tijdens het process.
 // door svg normaal te gebruiken. 1 duidt hier voornamelijk dat ik dit als eerste heb gemaakt.
-var svg1 = d3.select(".bars"),
+var svg1 = d3.select('.bars'),
     margin1 = {top: 20, right: 20, bottom: 30, left: 40},
-    width1 = +svg1.attr("width") - margin1.left - margin1.right,
-    height1 = +svg1.attr("height") - margin1.top - margin1.bottom;
+    width1 = +svg1.attr('width') - margin1.left - margin1.right,
+    height1 = +svg1.attr('height') - margin1.top - margin1.bottom;
 
 /* 
 hier geef ik de x en y as met daar in de scale en de range die straks bepaald hoe de datum(x) en totale tweets(y) afrond,
@@ -48,8 +48,8 @@ var x1 = d3.scaleBand().rangeRound([0, width1]).padding(0.1),
 /* 
   Hier groepeer in de svg om vervolgens daar al mijn bars in te plaatsen.
 */
-var g1 = svg1.append("g")
-    .attr("transform", "translate(" + margin1.left + "," + margin1.top + ")");
+var g1 = svg1.append('g')
+    .attr('transform', 'translate(' + margin1.left + ',' + margin1.top + ')');
 
 
 // Data inladen
@@ -72,7 +72,7 @@ function onload(err, tweets) {
 	var data = d3.csvParseRows(tweets, map);
 	var dataBar = d3.csvParseRows(tweets, mapBar);
 
-	// ik nest hier met d3.nest() ik maak hier een eigen "nest" voor de datum zodat ik daaruit de juiste data kan toekennen.
+	// ik nest hier met d3.nest() ik maak hier een eigen 'nest' voor de datum zodat ik daaruit de juiste data kan toekennen.
   // Bij het juiste jaartal. 
  	 dataBar = d3.nest()
     .key(function(d) {
@@ -136,9 +136,9 @@ function onload(err, tweets) {
   ik pak de group die ik heb gemaakt en ik aak een groep aan met de class .axis.axis--x voor de xaxis.
   hiermee roep ik de x1 variabelen om de xaxis te tekenen.
  */
-g1.append("g")
-      .attr("class", "axis axis--x")
-      .attr("transform", "translate(0," + height1 + ")")
+g1.append('g')
+      .attr('class', 'axis axis--x')
+      .attr('transform', 'translate(0,' + height1 + ')')
       .call(d3.axisBottom(x1));
 
 /*
@@ -146,30 +146,30 @@ g1.append("g")
   hiermee roep ik de y1 variabelen om de yaxis te tekenen. Daarna maken we een label aan die de text krijgt van Total tweets.
   Die 
  */
-  g1.append("g")
-      .attr("class", "axis axis--y")
+  g1.append('g')
+      .attr('class', 'axis axis--y')
       .call(d3.axisLeft(y1).ticks(10))
-    .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", "0.71em")
-      .attr("text-anchor", "end")
-      .text("All tweets");
+    .append('text')
+      .attr('transform', 'rotate(-90)')
+      .attr('y', 6)
+      .attr('dy', '0.71em')
+      .attr('text-anchor', 'end')
+      .text('All tweets');
 
 /*
   Ik maak hier de bars aan en append ik de rectengles. Daarna kleuren we hem licht blauw. Daarna vullen we de x1 as met de datum.
-  Daarna vullen de y1 as met de nests. Dit is als volgt date: "2011" values {[...]} <- Hierin zitten allemaal losse rows met waardes.
+  Daarna vullen de y1 as met de nests. Dit is als volgt date: '2011' values {[...]} <- Hierin zitten allemaal losse rows met waardes.
   Ik tel nu alle rows en plaatst dat als totalen in de y as , want elke record telt voor 1 tweet.  
  */
-  g1.selectAll(".bar")
+  g1.selectAll('.bar')
     .data(dataBar)
-    .enter().append("rect")
-      .attr("class", "bar")
+    .enter().append('rect')
+      .attr('class', 'bar')
       .style('fill','lightblue')
-      .attr("x", function(d) { return x1(d.date); })
-      .attr("y", function(d) { return y1(d.values.length); })
-      .attr("width", x1.bandwidth())
-      .attr("height", function(d) { return height1 - y1(d.values.length); })
+      .attr('x', function(d) { return x1(d.date); })
+      .attr('y', function(d) { return y1(d.values.length); })
+      .attr('width', x1.bandwidth())
+      .attr('height', function(d) { return height1 - y1(d.values.length); })
       .on('click', update);
 
 // Nu voor wat interactie: Ik maak hier een functie aan genaamd update, want we gaan de scatterplot (die er nog niet is)
