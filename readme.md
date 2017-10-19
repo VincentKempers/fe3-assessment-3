@@ -1,6 +1,6 @@
 # Assessment 3
 
-This is a assessment i needed to acquire data. And i thought it was a great idea to do my twitter data to make my last assessment more of a visualisation than cold numbers. i used the work of Mike bostock for the two charts i used. The barchart and the scatterplot.
+This is a assessment i needed to acquire data. And i thought it was a great idea to do my twitter data to make my last assessment more of a visualisation than cold numbers. i used the work of Mike bostock for the two charts i used. The [bar chart](https://bl.ocks.org/mbostock/3885304) and the [scatterplot](https://bl.ocks.org/mbostock/3887118).
 
 ## Background
 
@@ -31,9 +31,9 @@ So i created this datavisualisation that shows how many tweets i have on the scr
 
 *	I started out working on my data to clean it and work this mess of a dataset. So i first rendered it as a text file and deleted what i didn't need and worked my way up from there [`d3.csvParseRows()`](https://github.com/d3/d3-dsv/blob/master/README.md#csvParseRows).
 
-*	I used parts of the code from [barchart](https://bl.ocks.org/mbostock/3887118) by [Mike Bostock](https://github.com/mbostock). To rework it a little bit for the barchart.
+*	I used parts of the code from [bar chart](https://bl.ocks.org/mbostock/3885304)  by [Mike Bostock](https://github.com/mbostock). To rework it a little bit for the barchart.
 
-*	Then I used parts of the code from [scatterplot](https://bl.ocks.org/mbostock/3885304) by [Mike Bostock](https://github.com/mbostock). To rework it a little bit for the barchart.
+*	Then I used parts of the code from [scatterplot](https://bl.ocks.org/mbostock/3887118) by [Mike Bostock](https://github.com/mbostock). To rework it a little bit for the barchart.
 
 *	I started out to clean the data a bit more after I knew what I wanted to do, so that it is readable.To Achieve that i made a function to map all my data and nested the data for the barchart. 
 
@@ -66,7 +66,7 @@ So i created this datavisualisation that shows how many tweets i have on the scr
 Check the work of: 
 * [Mike Bostock](https://github.com/mbostock)
 
-For the animation bit of my code i used the sort [barchart](https://bl.ocks.org/mbostock/3885705) by [Mike Bostock](https://github.com/mbostock) [GPLv3](https://opensource.org/licenses/GPL-3.0).
+The work i based this on:  [bar chart](https://bl.ocks.org/mbostock/3885304) & [scatterplot](https://bl.ocks.org/mbostock/3887118) by [Mike Bostock](https://github.com/mbostock) [GPLv3](https://opensource.org/licenses/GPL-3.0).
 
 
 [GPLv3](https://choosealicense.com/licenses/gpl-3.0/) Vincent Kempers 👨🏽‍💻
