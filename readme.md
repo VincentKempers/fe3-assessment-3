@@ -2,9 +2,11 @@
 
 This is a assessment i needed to acquire data. And i thought it was a great idea to do my twitter data to make my last assessment more of a visualisation than cold numbers. i used the work of Mike bostock for the two charts i used. The [bar chart](https://bl.ocks.org/mbostock/3885304) and the [scatterplot](https://bl.ocks.org/mbostock/3887118).
 
+_Out of privacy reasons i deleted an @ user out of my data. The content is accessible but the tweets will send you to a unavailable tweet and the name will be in ------. To contain the privacy of that user._
+
 ## Background
 
-This assessment is to work on the interaction of a chart. The data must interact on the other chart in the data visualisation. I used data from my own twitter wich everybody can download in the settings of your twitter profile.
+This assessment is to work on the interaction of a chart. The data must interact on the other chart in the data visualisation. I used data from my own twitter wich everybody can download in the settings of your twitter profile. I wanted to create a visualisation instead of just two charts working together. I wanted to show that i'm kind of a twitter addict  🤷🏽‍♂️.
 
 `profile > settings > archive > download your archive`
 
@@ -69,4 +71,4 @@ Check the work of:
 The work i based this on:  [bar chart](https://bl.ocks.org/mbostock/3885304) & [scatterplot](https://bl.ocks.org/mbostock/3887118) by [Mike Bostock](https://github.com/mbostock) [GPLv3](https://opensource.org/licenses/GPL-3.0).
 
 
-[GPLv3](https://choosealicense.com/licenses/gpl-3.0/) Vincent Kempers 👨🏽‍💻
+[GPLv3](https://choosealicense.com/licenses/gpl-3.0/) -  [Vincent Kempers 👨🏽‍💻](https://twitter.com/_Vintelligent)
