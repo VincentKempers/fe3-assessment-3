@@ -6,7 +6,7 @@ This is a assessment i needed to acquire data. And i thought it was a great idea
 
 This assessment is to work on the interaction of a chart. The data must interact on the other chart in the data visualisation. I used data from my own twitter wich everybody can download in the settings of your twitter profile.
 
-`settings > archive > download your archive`
+`profile > settings > archive > download your archive`
 
 #### sample of my data layout
 

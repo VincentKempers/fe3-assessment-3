@@ -9,7 +9,7 @@
 // Benoem de margins/ daarna benoem ik de width en de height.
 var marginScatter = {top: 30, right: 30, bottom: 30, left: 50},
     widthScatter = 500 - marginScatter.left - marginScatter.right,
-    heightScatter = 700 - marginScatter.top - marginScatter.bottom;
+    heightScatter = 1500 - marginScatter.top - marginScatter.bottom;
 
 // Defineer de scales en de range van de x en y as
 var xScatter = d3.scaleLinear()
