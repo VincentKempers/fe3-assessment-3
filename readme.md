@@ -2,7 +2,7 @@
 
 This is a assessment i needed to acquire data. And i thought it was a great idea to do my twitter data to make my last assessment more of a visualisation than cold numbers. i used the work of Mike bostock for the two charts i used. The [bar chart](https://bl.ocks.org/mbostock/3885304) and the [scatterplot](https://bl.ocks.org/mbostock/3887118).
 
-_Out of privacy reasons i deleted an @ user out of my data. The content is accessible but the tweets will send you to a unavailable tweet and the name will be in ------. To contain the privacy of that user._
+*Disclaimer:* _Out of privacy reasons i deleted an @ user out of my data. The content is accessible but the tweets will send you to a unavailable tweet and the name will be in ------. To contain the privacy of that user._
 
 ## Background
 
